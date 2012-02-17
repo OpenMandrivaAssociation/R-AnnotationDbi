@@ -1,10 +1,10 @@
-%bcond_without    bootstrap
+%bcond_with       bootstrap
 %global packname  AnnotationDbi
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
 Version:          1.16.16
-Release:          1
+Release:          2
 Summary:          Annotation Database Interface
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
