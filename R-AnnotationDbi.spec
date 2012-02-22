@@ -1,4 +1,4 @@
-%bcond_with       bootstrap
+%bcond_with bootstrap
 %global packname  AnnotationDbi
 %global rlibdir  %{_libdir}/R/library
 
@@ -10,19 +10,18 @@ Group:            Sciences/Mathematics
 License:          Artistic-2.0
 URL:              http://bioconductor.org/packages/release/bioc/html/%{packname}.html
 Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/%{packname}_%{version}.tar.gz
-Requires:         R-methods R-utils R-Biobase 
-Requires:         R-methods R-utils R-Biobase R-DBI R-RSQLite R-IRanges 
-%if %{with bootstrap}
-Requires:         R-DBI R-RSQLite R-XML R-RCurl R-RUnit 
-%else
-Requires:         R-DBI R-RSQLite R-hgu95av2.db R-GO.db R-human.db0 R-hgu95av2cdf R-org.Sc.sgd.db R-org.At.tair.db R-affy R-KEGG.db R-XML R-RCurl R-RUnit 
+Requires:         R-methods R-utils R-Biobase R-DBI R-RSQLite R-IRanges
+Requires:         R-XML R-RCurl R-RUnit
+%if %{without bootstrap}
+Requires:         R-hgu95av2.db R-GO.db R-human.db0 R-hgu95av2cdf
+Requires:         R-org.Sc.sgd.db R-org.At.tair.db R-affy R-KEGG.db
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods R-utils R-Biobase
-BuildRequires:    R-methods R-utils R-Biobase R-DBI R-RSQLite R-IRanges 
-%if %{with bootstrap}
-BuildRequires:    R-DBI R-RSQLite R-XML R-RCurl R-RUnit 
-%else
-BuildRequires:    R-DBI R-RSQLite R-hgu95av2.db R-GO.db R-human.db0 R-hgu95av2cdf R-org.Sc.sgd.db R-org.At.tair.db R-affy R-KEGG.db R-XML R-RCurl R-RUnit 
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods
+BuildRequires:    R-utils R-Biobase R-methods R-utils R-Biobase R-DBI
+BuildRequires:    R-RSQLite R-IRanges R-XML R-RCurl R-RUnit 
+%if %{without bootstrap}
+BuildRequires:    R-hgu95av2.db R-GO.db R-human.db0 R-hgu95av2cdf
+BuildRequires:    R-org.Sc.sgd.db R-org.At.tair.db R-affy R-KEGG.db
 %endif
 
 %description
