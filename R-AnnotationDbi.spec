@@ -4,7 +4,7 @@
 
 Name:             R-%{packname}
 Version:          1.16.16
-Release:          2
+Release:          3
 Summary:          Annotation Database Interface
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
