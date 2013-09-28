@@ -3,13 +3,13 @@
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
-Version:          1.16.16
-Release:          3
+Version:          1.22.6
+Release:          1
 Summary:          Annotation Database Interface
 Group:            Sciences/Mathematics
 License:          Artistic-2.0
 URL:              http://bioconductor.org/packages/release/bioc/html/%{packname}.html
-Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/%{packname}_%{version}.tar.gz
+Source0:          http://bioconductor.org/packages/release/bioc/src/contrib/AnnotationDbi_1.22.6.tar.gz
 Requires:         R-methods R-utils R-Biobase R-DBI R-RSQLite R-IRanges
 Requires:         R-XML R-RCurl R-RUnit
 %if %{without bootstrap}
@@ -62,3 +62,4 @@ rm -f %{buildroot}%{rlibdir}/R.css
 %{rlibdir}/%{packname}/extdata
 %{rlibdir}/%{packname}/help
 %{rlibdir}/%{packname}/unitTests
+
